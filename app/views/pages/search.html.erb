@@ -1,0 +1,54 @@
+
+	
+	<table>
+	
+		<tr>
+
+			<th>Titre</h3></th>
+			<th><h3>Synopsis</h3></th>
+			<th><h3>Date</h3></th>
+			<th><h3>Director</h3></th>
+			<th><h3>Image</h3></th>
+		</tr>
+	</table>
+
+	<% 20.times do |x| %>
+	<% unless @results[x]==nil %>
+
+	<table>
+			<tr>
+			<td>
+				<% unless @results[x]["title"] == nil %>
+				<%= @results[x]["title"] %>
+				<% end %>
+				......................................................................................
+			</td>
+			<td>
+				<% unless @results[x]["overview"] == nil %>
+				<%= @results[x]["overview"] %>
+				<% end %>
+			</td>
+			<td>
+				<% unless @results[x]["release_date"] == nil %>
+				<%= @results[x]["release_date"] %>
+				<% end %>
+			</td>
+		    <td>
+			    <% unless @results[x]["director"] == nil %>
+				<%= @results[x]["director"] %>
+				<% end %>
+			</td>			
+			<td>
+				<% unless @results[x]["poster_path"] == nil %>
+				<%= image_tag "https://image.tmdb.org/t/p/w500/#{@results[x]["poster_path"]}" %>
+				<% end %>
+			</td>
+
+			</tr>
+		
+	</table>
+
+	</br>
+	____________________________________________________________________________________________________________________________
+	<% end %>
+<% end %>
